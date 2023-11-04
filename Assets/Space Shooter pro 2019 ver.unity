@@ -155,10 +155,16 @@ MonoBehaviour:
   _speed: 5
   _laserPrefab: {fileID: 7328062813080539662, guid: cc6c282a364317942b1b1659e9253e04,
     type: 3}
+  _tripleShotPrefab: {fileID: 8099002260765281478, guid: d86579911fca2ac4ea8baf9ea06babf9,
+    type: 3}
+  _quadShotPrefab: {fileID: 5370916650041001610, guid: 68737dc5f6527cd4b8ccb89355bc6921,
+    type: 3}
   _fireRate: 2
   _canFire: -1
   _lives: 3
   _spawnManager: {fileID: 0}
+  _isTripleShotActive: 0
+  _isQuadShotActive: 1
 --- !u!212 &520771535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -258,7 +264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621031212}
-  - component: {fileID: 621031211}
   - component: {fileID: 621031210}
   m_Layer: 0
   m_Name: SpawnManager
@@ -282,20 +287,6 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 6193865578386252631, guid: a9d6addb4e29ab0479dc5080a0e89033,
     type: 3}
   _enemyContainer: {fileID: 762239555}
---- !u!114 &621031211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621031209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4db3f76ba08714daf64404ccd324ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 0}
-  _enemyContainer: {fileID: 0}
 --- !u!4 &621031212
 Transform:
   m_ObjectHideFlags: 0

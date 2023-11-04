@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
+    private GameObject _tripleShotPrefab;
+    [SerializeField]
+    private GameObject _quadShotPrefab;
+    [SerializeField]
     private float _fireRate = 1.5f;
     [SerializeField]
     private float _canFire = -.5f;
@@ -17,6 +21,11 @@ public class Player : MonoBehaviour
     private int _lives = 3;
     [SerializeField]
     private SpawnManager _spawnManager;
+
+    [SerializeField]
+    private bool _isTripleShotActive = false;
+    [SerializeField]
+    private bool _isQuadShotActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,8 +71,31 @@ public class Player : MonoBehaviour
 
     void FireLaser()
     {
-            _canFire = Time.time + _fireRate;
+        _canFire = Time.time + _fireRate;
+
+        if (_isTripleShotActive == true)
+        {
+            Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);     
+            
+        }
+
+        else if (_isQuadShotActive == true)
+        {
+           Instantiate(_quadShotPrefab, transform.position, Quaternion.identity);
+        }
+
+        else
+        {
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
+        }
+
+
+        //if space key press,
+        //if tripleshotactive is true
+        //fire 3 lasers (triple shot prefab) 
+
+        //instantiate 3 lasers (triple shot prefab)
+
     }
 
     public void Damage()
