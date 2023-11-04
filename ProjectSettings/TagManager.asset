@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Laser
+  - TripleShotPU
+  - QuadShotPU
+  - SpeedPU
+  - ShieldPU
   layers:
   - Default
   - TransparentFX

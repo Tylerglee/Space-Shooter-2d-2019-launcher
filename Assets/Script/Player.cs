@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _fireRate = 1.5f;
     [SerializeField]
-    private float _canFire = -.5f;
+    private float _canFire = -5.5f;
     [SerializeField]
     private int _lives = 3;
     [SerializeField]
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
         else if (_isQuadShotActive == true)
         {
-           Instantiate(_quadShotPrefab, transform.position, Quaternion.identity);
+           Instantiate(_quadShotPrefab, transform.position + new Vector3(-0.14f, .05f, 0), Quaternion.identity);
         }
 
         else
@@ -116,4 +116,32 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-}
+
+    public void TripleShotActive()
+    {
+        _isTripleShotActive = true;
+        StartCoroutine(TripleShotPowerDownRoutine());
+        //start the power down coroutine for triple shot
+    }
+
+    //IEnumberator TripleShotPowerDownRoutine
+    //Wait 5 seconds
+    //Set the triple shot to false
+    IEnumerator TripleShotPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isTripleShotActive = false;
+    }
+
+    public void QuadShotActive()
+    {
+        _isQuadShotActive = true;
+        StartCoroutine(QuadShotPowerDownRoutine());
+    }
+
+    IEnumerator QuadShotPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isQuadShotActive = false;
+    }
+ }
