@@ -42,6 +42,7 @@ public class Powerup : MonoBehaviour
             //handle to the component I want 
             //assign the handle to the component
             Player player = other.transform.GetComponent<Player>();
+         
             if (player != null)
             {                                  
                 switch (powerupID) 
@@ -50,10 +51,10 @@ public class Powerup : MonoBehaviour
                         player.TripleShotActive();
                         break;
                     case 1:
-                        Debug.Log("Collected Speed Boost");
+                        player.SpeedBoostActive();
                         break;
                     case 2:
-                        Debug.Log("Shield Collected");
+                        player.ShieldsActive();
                         break;
                 }
             }
