@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TripleShotPowerup : MonoBehaviour
+public class Powerup : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 3.0f; 
+    private float _speed = 3.0f;
+
+    [SerializeField] //0 = Triple Shot 1 = Speed 2 = shields
+    private int powerupID;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +38,24 @@ public class TripleShotPowerup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //communicate with the palyer script
+            //communicate with the player script
             //handle to the component I want 
             //assign the handle to the component
             Player player = other.transform.GetComponent<Player>();
             if (player != null)
-            {
-                player.TripleShotActive();
+            {                                  
+                switch (powerupID) 
+                {
+                    case 0:
+                        player.TripleShotActive();
+                        break;
+                    case 1:
+                        Debug.Log("Collected Speed Boost");
+                        break;
+                    case 2:
+                        Debug.Log("Shield Collected");
+                        break;
+                }
             }
 
             Destroy(this.gameObject);
