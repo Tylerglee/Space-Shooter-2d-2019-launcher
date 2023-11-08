@@ -109,14 +109,6 @@ public class Player : MonoBehaviour
         {
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
         }
-
-
-        //if space key press,
-        //if tripleshotactive is true
-        //fire 3 lasers (triple shot prefab) 
-
-        //instantiate 3 lasers (triple shot prefab)
-
     }
 
     public void Damage()
@@ -130,9 +122,11 @@ public class Player : MonoBehaviour
         
 
         _lives--;
-       // _lives = _lives - 1;
-       // _lives -= 1;
+         // _lives = _lives - 1;
+         // _lives -= 1;
 
+        _uiManager.UpdateLives(_lives);
+     
 
         if (_lives < 1)
         {

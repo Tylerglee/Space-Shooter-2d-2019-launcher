@@ -10,17 +10,9 @@ public class Powerup : MonoBehaviour
     [SerializeField] //0 = Triple Shot 1 = Speed 2 = shields
     private int powerupID;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        //move down at a speed of 3 (adjust in the inspector
-        //When we leave the screen, destroy this object
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
 
         if (transform.position.y < -4.5f)
