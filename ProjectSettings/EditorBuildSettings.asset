@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main_Menus.unity
+    guid: 859aae70bfaff304bb10c856ebf4be08
+  - enabled: 1
     path: Assets/Scenes/Space Shooter pro 2019 ver.unity
     guid: ec9c5b26756d1be48841bbcbc1c5650e
   m_configObjects: {}
