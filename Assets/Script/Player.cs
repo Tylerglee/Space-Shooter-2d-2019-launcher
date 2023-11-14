@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private GameObject _shieldVisualizer;
     [SerializeField]
     private GameObject _rightEngine, _leftEngine;
-   
+  //  private GameObject _leftEngine;
 
     [SerializeField]
     private int _score;
