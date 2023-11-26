@@ -14,10 +14,16 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(1); //Current Game Scene
             //SceneManager.LoadScene("Space Shooter pro 2019 ver");
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
     public void Gameover()
     {
-        _isGameOver = true;
+        _isGameOver = true; 
     }
 }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
 
     private bool _isTripleShotActive = false;
-    private bool _isSpeedBoostActive = false; 
+    //private bool _isSpeedBoostActive = false;
     private bool _isShieldsActive = false;
     [SerializeField]
     private bool _isQuadShotActive = false;
@@ -201,7 +201,7 @@ public class Player : MonoBehaviour
 
     public void SpeedBoostActive()
     {
-        _isSpeedBoostActive = true;
+        //_isSpeedBoostActive = true;
         _speed *= _speedMultiplier;
         StartCoroutine(SpeedBoostPowerDownRoutine());
     }
@@ -209,7 +209,7 @@ public class Player : MonoBehaviour
     IEnumerator SpeedBoostPowerDownRoutine()
     {
         yield return new WaitForSeconds(5.0f); 
-        _isSpeedBoostActive = false;
+       // _isSpeedBoostActive = true;
         _speed /= _speedMultiplier;
     }
 
