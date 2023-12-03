@@ -11,6 +11,7 @@ TagManager:
   - SpeedPU
   - ShieldPU
   - Explosion
+  - EnemyLaser
   layers:
   - Default
   - TransparentFX

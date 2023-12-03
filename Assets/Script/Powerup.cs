@@ -8,7 +8,7 @@ public class Powerup : MonoBehaviour
     private float _speed = 3.0f;
 
     [SerializeField] //0 = Triple Shot 1 = Speed 2 = shields
-    private int powerupID;
+    private int _powerupID;
     [SerializeField]
     private AudioClip _clip;
 
@@ -45,7 +45,7 @@ public class Powerup : MonoBehaviour
          
             if (player != null)
             {                                  
-                switch (powerupID) 
+                switch (_powerupID) 
                 {
                     case 0:
                         player.TripleShotActive();

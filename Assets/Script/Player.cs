@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    private float _speed = 3.5f;
+    private float _speed = 5f;
     private float _speedMultiplier = 2;
     [SerializeField]
     private GameObject _laserPrefab;
@@ -28,7 +28,10 @@ public class Player : MonoBehaviour
     private bool _isShieldsActive = false;
     [SerializeField]
     private bool _isQuadShotActive = false;
+    
 
+    [SerializeField]
+    private GameObject _thruster;
     [SerializeField]
     private GameObject _shieldVisualizer;
     [SerializeField]
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         _audioSource = GetComponent<AudioSource>();
 
+        _thruster.SetActive(false);
+
 
             
         if (_spawnManager == null )
@@ -83,11 +88,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        Thrusters();
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire)
         {
-            FireLaser();
+            FireLaser();          
         }
+
     }
     void CalculateMovement()
     {
@@ -109,6 +116,23 @@ public class Player : MonoBehaviour
         {
 
             transform.position = new Vector3(11.3f, transform.position.y, 0);
+        }
+    }
+
+    void Thrusters()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (_thruster != null) 
+            {
+                _speed = 8f;
+                _thruster.SetActive(true);
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+           _speed = 5f;
+           _thruster.SetActive(false);
         }
     }
 

@@ -102,6 +102,7 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 2.5f);
            
         }
+       
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
