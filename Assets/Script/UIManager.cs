@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
     private Image _livesImg;
     [SerializeField]    
     private Sprite[] _liveSprites;
+    [SerializeField]
+    private Image _shieldLivesImg;
+    [SerializeField]
+    private Sprite[] _shieldSprites;
   
     private GameManager _gameManager;
 

@@ -33,7 +33,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _thruster;
     [SerializeField]
-    private GameObject _shieldVisualizer;
+    private GameObject _shieldVisualizer1;
+    [SerializeField]
+    private GameObject _shieldVisualizer2;
+    [SerializeField]
+    private GameObject _shieldVisualizer3;
     [SerializeField]
     private GameObject _rightEngine, _leftEngine;
   //  private GameObject _leftEngine;
@@ -165,7 +169,7 @@ public class Player : MonoBehaviour
         if (_isShieldsActive == true)
         {
             _isShieldsActive = false;
-            _shieldVisualizer.SetActive(false);
+            _shieldVisualizer1.SetActive(false);
             return;
         }
         
@@ -239,8 +243,9 @@ public class Player : MonoBehaviour
 
     public void ShieldsActive()
     {
+       // _shieldLives = 3;
         _isShieldsActive = true;
-        _shieldVisualizer.SetActive(true);
+        _shieldVisualizer1.SetActive(true);
     }
 
     public void AddScore(int points)
